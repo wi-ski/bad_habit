@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/willdembinski/bad_habit/issues"
   },
-  "homepage": "https://github.com/willdembinski/bad_habit#readme"
+  "homepage": "https://github.com/willdembinski/bad_habit#readme",
+  "dependencies": {
+    "kerberos": "0.0.17",
+    "mongoose": "^4.2.7"
+  }
 }
