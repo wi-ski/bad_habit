@@ -1,0 +1,30 @@
+{
+  "name": "badhabit",
+  "version": "1.0.0",
+  "description": "A block chain explorer that doesnt suck",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willdembinski/bad_habit.git"
+  },
+  "keywords": [
+    "namecoin",
+    "blockchains",
+    "block",
+    "chains",
+    "javscript",
+    "will",
+    "dembinski",
+    "nodejs",
+    "node"
+  ],
+  "author": "Will Dembinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willdembinski/bad_habit/issues"
+  },
+  "homepage": "https://github.com/willdembinski/bad_habit#readme"
+}

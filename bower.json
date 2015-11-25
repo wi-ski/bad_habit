@@ -1,0 +1,33 @@
+{
+  "name": "badhabit",
+  "version": "0.0.0",
+  "authors": [
+    "Will Dembinski willdembinski@gmail.com"
+  ],
+  "description": "A name coin crawler and blockchain explorer that doesnt suck",
+  "keywords": [
+    "namecoin",
+    "blockchains",
+    "block",
+    "chains",
+    "javascript",
+    "nodejs",
+    "node",
+    "angularjs",
+    "backbone"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.3",
+    "underscore": "~1.8.3"
+  }
+}
