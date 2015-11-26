@@ -3,7 +3,6 @@ var NmcBlock = require('../app/modules/nmc_model.js');
 
 var Crawler = new Crawl();
 
-
 function populate(name,count){
 	Crawler.name_scan(name,count).then(function(name_collection){
 		var name_collection = JSON.parse(name_collection);

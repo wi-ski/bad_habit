@@ -15,40 +15,12 @@ var DecorateOpenRouter = require('./OpenRouter.js');
 
 // DecorateClosedRouter(expressRouter);
 
+app.use(express.static(__dirname + '../../../client/'));
 app.use('/',OpenRouter);
 DecorateOpenRouter(OpenRouter);
 server.listen(port);
 require('./config/middleware/Middleware.js')(app, express);
-app.use(express.static(__dirname + '../../../client/app/'));
 
-
-
-
-
-
-
-
-// var currentUsersInRoom = {};
-
-// io.on('connection', function (socket) {
-
-//   socket.on('connectToRoom', function (room) {
-//     var currentRoom = room;
-//     socket.join(currentRoom);
-
-//     socket.on('userData', function (user) {
-//       var singleUser = {};
-//       singleUser[user.id] = user;
-//       currentUsersInRoom[currentRoom] = singleUser;
-//       io.in(currentRoom).emit('serverData', currentUsersInRoom);
-//     });
-
-//     socket.on('logout', function (user) {
-//       delete currentUsersInRoom[currentRoom][user.id];
-//       socket.leave(currentRoom);
-//       io.in(currentRoom).emit('serverData', currentUsersInRoom);
-//     })
-//   });
-// });
+console.log("Server listening on port: ",port)
 
 module.exports = app;

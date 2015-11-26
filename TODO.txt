@@ -1,0 +1,4 @@
+1. Fix GET "/nmc/entry/" to find the last 20 entries? - Need to fix the db populate issue that stops around 38k.
+
+2. Users should be able to: (a) Upvote/Downvote categories (b) Suggest Categories (c) Build a list of results by cat.
+
