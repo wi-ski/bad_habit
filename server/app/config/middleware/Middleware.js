@@ -4,7 +4,6 @@ var logger = require('./logger.js');
 
 module.exports = function (app, express) {
 	console.log("TEST: ",__dirname)
-  app.use(express.static(__dirname + '../../../client/app/'));
   
   //cookie parser
   app.use(cookieParser());

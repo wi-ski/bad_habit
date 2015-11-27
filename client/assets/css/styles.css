@@ -1,5 +1,4 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
-/*body { padding-top: 52px; }
-@media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
-}*/
+.resultJediTable{
+	width:100%;
+}

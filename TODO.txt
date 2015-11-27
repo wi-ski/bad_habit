@@ -2,3 +2,5 @@
 
 2. Users should be able to: (a) Upvote/Downvote categories (b) Suggest Categories (c) Build a list of results by cat.
 
+3. Make jeditables revert back to static text when clicked outside of.  Have  aservice in app.js that might be useful
+

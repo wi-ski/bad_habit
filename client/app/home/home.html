@@ -1,33 +1,39 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="bs-component">
-			  <div class="list-group">
-			    <a href="#" class="list-group-item">
-			      <h4 class="list-group-item-heading">List group item heading</h4>
-			      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			    </a>
-			    <a href="#" class="list-group-item">
-			      <h4 class="list-group-item-heading">List group item heading</h4>
-			      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			    </a>
-			    <a href="#" class="list-group-item">
-			      <h4 class="list-group-item-heading">List group item heading</h4>
-			      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			    </a>
-			    <a href="#" class="list-group-item">
-			      <h4 class="list-group-item-heading">List group item heading</h4>
-			      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			    </a>
-			    <a href="#" class="list-group-item">
-			      <h4 class="list-group-item-heading">List group item heading</h4>
-			      <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-			    </a>
-			  </div>
+				<accordion close-others="oneAtATime">
+				  <accordion-group id="{{nmc._id}}"  ng-repeat="nmc in nmcResponses" heading="{{nmc.name}}" tooltoggler>
+				    <form ng-repeat="(key,value) in nmc">
+				      <div ng-hide="showEdit"
+				           ng-click="showEdit = true">
+				        <span style="font-weight:bold;">{{key}} </span> : <span> {{value | characters:80}}</span>
+				      </div>
+				      <div>
+				        <input class="resultJediTable" type="text"
+				                ng-show="showEdit"
+				                value="{{value}}" />
+				      </div>
+				    </form>
+				  </accordion-group>
+				</accordion>
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="jumbotron"></div>
 
-			
+
+			<div class="well well-sm">
+				<uib-tabset justified="true">
+				  <uib-tab heading="Details">
+						<p ng-repeat="(key,value) in ResultInFocus">{{key}}:{{value | characters:30}}</p>
+				  </uib-tab>
+				  <uib-tab heading="Contribute">Voting Stuff...</uib-tab>
+				  <uib-tab heading="User">User info stuff...</uib-tab>
+				</uib-tabset>
+			</div>
+
+
+
+
+
 		</div>
 	</div>
