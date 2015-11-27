@@ -3,8 +3,8 @@ var app = express();
 var server = require('http').createServer(app);
 
 var port = process.env.PORT || 8000;
+var bodyParser = require('body-parser');
 // var io = require('socket.io')(server);
-// var bodyParser = require('body-parser');
 // var cookieParser = require('cookie-parser');
 
 var OpenRouter = express.Router(); //unpriveleged
@@ -14,7 +14,7 @@ var DecorateOpenRouter = require('./OpenRouter.js');
 // var DecorateClosedRouter = require('./ClosedRouter.js');
 
 // DecorateClosedRouter(expressRouter);
-
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '../../../client/'));
 app.use('/',OpenRouter);
 DecorateOpenRouter(OpenRouter);

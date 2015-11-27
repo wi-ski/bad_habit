@@ -3,8 +3,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('./logger.js');
 
 module.exports = function (app, express) {
-	console.log("TEST: ",__dirname)
-  
+
   //cookie parser
   app.use(cookieParser());
   
