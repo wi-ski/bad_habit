@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS users(
 
 CREATE INDEX email_idx on users(email text_pattern_ops);
 
-
 CREATE TABLE IF NOT EXISTS nmc_blocks(
   id serial not null PRIMARY KEY,
   name text UNIQUE,

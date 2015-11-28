@@ -1,14 +1,7 @@
 angular.module('bad_habit', [
-  // 'bad_habit.facebook',
-  'ui.bootstrap',
   'ngAnimate',
-  'bad_habit.home',
+  'ui.bootstrap',
   'ui.bootstrap.tpls',
-  // 'bad_habit.map',
-  // 'bad_habit.maker',
-  // 'bad_habit.streetview',
-  // 'bad_habit.services',
-  // 'bad_habit.replay',
   'ui.router'
 ])
 
@@ -26,8 +19,20 @@ angular.module('bad_habit', [
     })
 })
 
-//service to handle hiding jeditables on search results
 
+.factory('AttachTokens', function ($window,user,$rootScope) {
+  var attach = {
+    request: function (object) {
+      var jwt = $rootScope.authToken;
+      if (jwt) {
+        object.data['x-access-token'] = jwt;
+      }
+      object.headers['Allow-Control-Allow-Origin'] = '*';
+      return object;
+    }
+  };
+  return attach;
+}
 
 // .factory('clickAnywhereButHereService', function($document){
 //   var tracker = [];

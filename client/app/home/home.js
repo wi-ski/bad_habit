@@ -1,4 +1,4 @@
-angular.module('bad_habit.home', ['truncate'])
+angular.module('bad_habit', ['truncate'])
 
 .controller('HomeController', ['$scope','$http', function ($scope,$http) {
   $scope.oneAtATime = true;
@@ -22,7 +22,7 @@ angular.module('bad_habit.home', ['truncate'])
     method: 'GET',
     url: '/nmc/entry/latest/'
   }).then(function successCallback(response) {
-    	$scope.nmcResponses = response.data;
+    	$scope.nmcResponses = response.data.data;
     }, function errorCallback(response) {
       $scope.nmcResponses = [{"_id":"ERROR - Check network","name":"ERROR - Check network","value":"ERROR - Check network","txid":"ERROR - Check network","vout":"ERROR - Check network","address":"ERROR - Check network","height":"ERROR - Check network","expires_in":"ERROR - Check network","expired":"ERROR - Check network","__v":"ERROR - Check network","created":"ERROR - Check network"}];
     });
@@ -35,7 +35,7 @@ angular.module('bad_habit.home', ['truncate'])
           scope.toggleResult(attr.id);
       });
     }
-    };
+   };
 })
 
 .directive('autofocus', function ($timeout) { //need to work this in for input fields

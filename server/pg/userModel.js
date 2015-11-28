@@ -6,12 +6,6 @@ var superSecret="TheSuperSecret";
 
 function _handleError(err,client,done){
 	if(!err) return false;
-
-	   // An error occurred, remove the client from the connection pool.
-	   // A truthy value passed to done will remove the connection from the pool
-	   // instead of simply returning it to be reused.
-	   // In this case, if we have successfully received a client (truthy)
-	   // then it will be removed from the pool.
    if(client){
      done(client);
    }
@@ -20,9 +14,7 @@ function _handleError(err,client,done){
 
 var UserModel = {
 	create: function(userObj,callback){
-		if(!userObj.password || !userObj.email) {
-			return res.send("Bad request",404);
-		}
+		if(!userObj.password || !userObj.email) return callback({success:false,data:"Malformed user object"});
 		bcrypt.genSalt(10, function(err, salt) {
 		    bcrypt.hash(userObj.password, salt, function(err, hash) {
 					userObj.password = hash;
@@ -34,7 +26,7 @@ var UserModel = {
 				      }
 				      client.query("INSERT INTO users(email, password) values($1, $2) returning email,id", [userObj.email, userObj.password],function(err,result){
 				      	if (_handleError(err,client,done)){
-				      		console.log("Error in PG Query - New User",err);
+				      		console.log("Error in PG Query - `",err);
 				      		callback(err,null);
 				      		return done();
 				      	}
@@ -117,10 +109,3 @@ var UserModel = {
 }
 
 module.exports = UserModel;
-
-
-
-// console.log(UserModel.get({email:"Somerandom Email"},function(err,success){
-// 		if(err) return console.log("err in callback",err);
-// 		console.log("success in callback",success)
-// }));
