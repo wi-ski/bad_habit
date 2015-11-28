@@ -99,16 +99,18 @@ var UserModel = {
 	    	}
 	    	done();
 	    	var user = result.rows[0];
-	    	user.authenticate = function (pwd,cb) {
-															var password = this.password
-															console.log("PWD",password)
-															bcrypt.compare(pwd, password, function(err, res) {
-																if(err) return cb(err);
-																cb(null,res);
-															});
-														};
-	    	callback(null,user);
-	    	done();
+	    	if(user){
+		    	user.authenticate = function (pwd,cb) {
+																var password = this.password
+																console.log("PWD",password)
+																bcrypt.compare(pwd, password, function(err, res) {
+																	if(err) return cb(err);
+																	cb(null,res);
+																});
+															};
+		    	return callback(null,user);
+	    	}
+	    	return callback({success:false,data:"Couldn't locate user with that info"},null);
 	    });
 		});
 	}

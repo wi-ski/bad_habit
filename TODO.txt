@@ -4,3 +4,7 @@
 
 3. Make jeditables revert back to static text when clicked outside of.  Have  aservice in app.js that might be useful
 
+4. Make logout route actually meaningful, and implement session destroy client side if not
+
+5. Implement email verification
+
