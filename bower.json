@@ -25,6 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-bootstrap": "~0.14.3"
+    "angular-material": "master",
+    "angular": "~1.4.8"
   }
 }

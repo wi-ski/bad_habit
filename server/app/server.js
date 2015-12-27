@@ -18,8 +18,8 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '../../../client/'));
 
 
-app.use('/',OpenRouter);
-app.use('/',ClosedRouter);
+app.use('/', OpenRouter);
+app.use('/', ClosedRouter);
 
 //json web token middleware
 ClosedRouter.use(jwtCheck);
@@ -32,6 +32,4 @@ require('./config/middleware/Middleware.js')(app, express);
 
 server.listen(port);
 
-console.log("Server listening on port: ",port)
-
-module.exports = app;
+console.log("Server listening on port: ", port)
